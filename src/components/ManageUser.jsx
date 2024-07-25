@@ -18,6 +18,14 @@ export default function ManageUser() {
 
   const [data, sendData] = useState({});
 
+  const RecognizeFilteringMethod = () => {
+    let search = document.querySelector("#search");
+
+    if (search.value !== "") return SearchUser(search.value);
+
+    return OrderById();
+  };
+
   const OrderById = async () => {
     try {
       const res = await axios.get("http://localhost:4435/accounts/sort/id");
@@ -47,14 +55,6 @@ export default function ManageUser() {
 
   const MInit = async () => {
     await M.Modal.init(document.querySelectorAll(".modal"));
-  };
-
-  const RecognizeFilteringMethod = () => {
-    let search = document.querySelector("#search");
-
-    if (search.value !== "") return SearchUser(search.value);
-
-    return OrderById();
   };
 
   return (

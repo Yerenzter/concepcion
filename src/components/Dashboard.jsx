@@ -1,12 +1,29 @@
+import useToken from "../routers/useToken";
+import Home from "./Home";
+
+let yoyo = 0;
+
+export function SetYoyo(a) {
+  yoyo = a;
+}
+
 export default function Dashboard() {
+  console.log(yoyo);
   return (
     <>
       <div className="navbar-fixed">
         <nav>
-          <div className="nav-wrappe">
+          <div className="nav-wrapper">
             <a className="brand-logo">
               HI USER WELCOME TO BRGY CONCEPCION INFORMATION SYSTEM
-            </a>S
+            </a>
+            <a
+              href="/"
+              className="right text-black px-5 waves-effect"
+              onClick={() => Logout()}
+            >
+              <i className="material-icons">logout</i>
+            </a>
           </div>
         </nav>
       </div>
@@ -25,8 +42,12 @@ export default function Dashboard() {
               </div>
               <div className="divider"></div>
               <div className="card-footer center-align p-5">
-                <button className="btn bg-blue-500 waves-effect"
-                  onClick={() => window.location.href='/dashboard/manage/users'}>
+                <button
+                  className="btn bg-blue-500 waves-effect"
+                  onClick={() =>
+                    (window.location.href = "/dashboard/manage/users")
+                  }
+                >
                   Click Here
                 </button>
               </div>
@@ -50,14 +71,18 @@ export default function Dashboard() {
               </div>
               <div className="divider"></div>
               <div className="card-footer center-align p-5">
-                <button className="btn bg-blue-500 waves-effect"  
-                  onClick={() => window.location.href='/dashboard/manage/residents'}>
+                <button
+                  className="btn bg-blue-500 waves-effect"
+                  onClick={() =>
+                    (window.location.href = "/dashboard/manage/residents")
+                  }
+                >
                   Click Here
                 </button>
               </div>
             </div>
 
-            <div className="card col-span-6">
+            <div className="card col-span-6 hidden">
               <div className="card-body p-10 center-align">
                 <span>Manage Requests</span>
               </div>
