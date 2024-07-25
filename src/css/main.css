@@ -1,0 +1,9 @@
+.concepcion {
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    background-image: url('../assets/concepcion.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
